@@ -11,14 +11,14 @@ Also, the contract address on the Rinkeby Network:
 
 See on [Rinkeby Etherscan](https://rinkeby.etherscan.io/address/0x2f88A89cc270b9c0107538bE92460af29D06fC33)
 
-Finally I have created 3 stars:
+Finally I have created 4 stars:
 
 - Star id `1`, named `Udacity Star`, owned by `0xA9e39Ed28cBd782d66Ec76700E5F4B5B2031778C`
 - Star id `2`, named `Toto Star`, owned by `0x314ddeAeEB51187cE9833bb9A7bFd1cA898F3b9A`
 - Star id `3`, named `Cam Star`, owned by `0xe02Fb45C99D8e5A2F2037a35F4D1b1f2b79062AE`
 - Star id `4`, named `Matt Star`, owned by `0xA9e39Ed28cBd782d66Ec76700E5F4B5B2031778C`
 
-See `Deployment Information` below for more information about the deployment on the Rinkeby network.
+See [Deployment Information](#deployment-information-on-rinkeby) below for more information about the deployment on the Rinkeby network.
 
 ## Demo
 
