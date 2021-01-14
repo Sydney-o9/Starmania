@@ -9,7 +9,20 @@ Also, the contract address on the Rinkeby Network:
 
 - `0x2f88A89cc270b9c0107538bE92460af29D06fC33`
 
+See on [Rinkeby Etherscan](https://rinkeby.etherscan.io/address/0x2f88A89cc270b9c0107538bE92460af29D06fC33)
+
+Finally I have created 3 stars:
+
+- Star id `1`, named `Udacity Star`, owned by `0xA9e39Ed28cBd782d66Ec76700E5F4B5B2031778C`
+- Star id `2`, named `Toto Star`, owned by `0x314ddeAeEB51187cE9833bb9A7bFd1cA898F3b9A`
+- Star id `3`, named `Cam Star`, owned by `0xe02Fb45C99D8e5A2F2037a35F4D1b1f2b79062AE`
+- Star id `4`, named `Matt Star`, owned by `0xA9e39Ed28cBd782d66Ec76700E5F4B5B2031778C`
+
 See `Deployment Information` below for more information about the deployment on the Rinkeby network.
+
+## Demo
+
+![Demo](doc/MyFirstDApp.gif)
 
 ## Versions
 
@@ -43,7 +56,7 @@ Please note the following:
 
 - To be able to assert additional scenarios, I am using [truffle-assertions](https://github.com/rkalis/truffle-assertions)
 
-As an example, this allows me to test reversion if a star does not exist:
+As an example, this allows us to test reversion if a star does not exist:
 
 ```
 await truffleAssert.reverts(
@@ -57,12 +70,3 @@ await truffleAssert.reverts(
 - When writing tests, I have created 2 new test cases to ensure `revert` happens in critical security scenarios i.e. the unhappy paths. These are `it('does not let a user exchange a star he/she does not own', ..` and `it('does not let a user transfer a star he/she does not own', ..)`.
 
 - I am using Port 8545 locally
-
-## Task 1
-
-- [x] Added `name` and `symbol` properties to `StarNotary`
-- [x] Wrote tests for it
-
-- [x] Added a function `lookUptokenIdToStarInfo`, that looks up the stars using the Token ID, and then returns the name of the star.
-
-- [x] OPTIONAL: Created a modifier `starExists(unit _tokenId)` and modified function signature for `lookUptokenIdToStarInfo` to use this modifier
