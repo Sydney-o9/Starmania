@@ -1,0 +1,29 @@
+{
+  "name": "starmania",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "truffle": "truffle"
+  },
+  "author": "Sydney_o9 <sydney-o9@outlook.com> (https://github.com/Sydney-o9)",
+  "license": "ISC",
+  "devDependencies": {
+    "truffle": "^5.1.61"
+  },
+  "dependencies": {
+    "any-promise": "1.3.0",
+    "bindings": "1.4.0",
+    "debug": "2.6.9",
+    "file-uri-to-path": "1.0.0",
+    "is-typedarray": "1.0.0",
+    "ms": "2.0.0",
+    "nan": "2.12.1",
+    "openzeppelin-solidity": "2.1.2",
+    "truffle-hdwallet-provider": "1.0.2",
+    "typedarray-to-buffer": "3.1.5",
+    "websocket": "1.0.28",
+    "yaeti": "0.0.6"
+  }
+}
