@@ -17,6 +17,8 @@ await truffleAssert.reverts(
 
 - To exchange stars, it was suggested to use the `_transferFrom` method which is unsafe, I have followed the instructions. It seems it would have been a good idea to use `safeTransferFrom` instead to transfer ownership of the tokens. Most importantly, it may have been preferable to have approval from the owner before proceeding with the transfer. Hence `_transferFrom` is quite dangerous, and at least `transferFrom` should have been used. To do this, we would have had to create a function to approve the transfer of a star for a period of time. Once granted approval, the transfer can be started by the other owner. 
 
+- When writing tests, I have created 2 new test cases to ensure `revert` happens in critical security scenarios. These are `it('does not let a user exchange a star he/she does not own', ..` and `it('does not let a user transfer a star he/she does not own', ..)`.
+
 ## Task 1
 
 - [x] Added `name` and `symbol` properties to `StarNotary`

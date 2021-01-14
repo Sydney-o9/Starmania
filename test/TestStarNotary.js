@@ -163,10 +163,51 @@ it('does not let a user exchange a star he/she does not own', async() => {
         instance.exchangeStars(starId1, starId2, {from: naughtyExchanger}),
         "Only the owner of one of the stars can exchange stars with someone else."
     );
+
+    // We make sure the stars are still well guarded in their respective wallets
+    assert.equal(await instance.ownerOf.call(starId1), user1);
+    assert.equal(await instance.ownerOf.call(starId2), user2);
 });
 
 it('lets a user transfer a star', async() => {
+    let instance = await StarNotary.deployed();
+
     // 1. create a Star with different tokenId
+    let starId1 = 13;
+    let user1 = accounts[1];
+    await instance.createStar('A Star', starId1, {from: user1});
+
+    // Sanity Check, we verify the owners are correct to begin with
+    assert.equal(await instance.ownerOf.call(starId1), user1);
+
     // 2. use the transferStar function implemented in the Smart Contract
+    let user2 = accounts[2];
+    instance.transferStar(user2, starId1, {from: user1}),
+
     // 3. Verify the star owner changed.
+    assert.equal(await instance.ownerOf.call(starId1), user2);
+});
+
+it('does not let a user transfer a star he/she does not own', async() => {
+    let instance = await StarNotary.deployed();
+
+    // 1. create a Star with different tokenId
+    let starId1 = 14;
+    let user1 = accounts[1];
+    await instance.createStar('A Star', starId1, {from: user1});
+
+    // Sanity Check, we verify the owners are correct to begin with
+    assert.equal(await instance.ownerOf.call(starId1), user1);
+
+    // 2. use the transferStar function implemented in the Smart Contract
+    let thief = accounts[2];
+
+    // We verify the transfer failed as the transferer is not the owner
+    await truffleAssert.reverts(
+        instance.transferStar(user1, starId1, {from: thief}),
+        "Only the owner can transfer its stars to someone else."
+    );
+
+    // We make sure the star is still well guarded in user1's wallet
+    assert.equal(await instance.ownerOf.call(starId1), user1);
 });
